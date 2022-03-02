@@ -117,15 +117,27 @@ function Node (value) {
 
 function addElement(data){
 
-	content.innerHTML += '<div id= "node'+countNode+'" onclick="clickDeleteElement( value='+Object.values(data)+')">'+Object.values(data)+' <br> </div>';
+	content.innerHTML += '<div id= "'+Object.values(data)+'" onclick="clickDeleteElement(event)">'+Object.values(data)+' <br> </div>';
 	countNode = countNode +1;
 	list.append(Object.values(data));
 
 }
 
-function clickDeleteElement(event, value){
+function clickDeleteElement(event,value){
+	
+	alert(event.target.id);
+	document.getElementById(event.target.id).style.display = "none";
+	list.removeNode(event.target.id);
+
+
+	
+}
+
+function clickDeleteElementV1(event, value){
 	
 	alert("Se Borro:"+ value);
+	//document.getElementById("node"+value).style.display = "none";
 	list.removeNode(value);
+
 	
 }
