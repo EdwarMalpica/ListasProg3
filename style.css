@@ -1,0 +1,12 @@
+
+.marginCustomizer{
+	padding: 50px;
+	margin: 50px;
+}
+
+.centerCustomizer{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
